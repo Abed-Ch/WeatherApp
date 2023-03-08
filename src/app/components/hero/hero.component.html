@@ -1,0 +1,68 @@
+<div class="hero-container d-flex align-items-center justify-content-center m-lg-5 me-lg-0 mt-0 mt-lg-0">
+    <div class="container-fluid ms-lg-5 me-lg-0">
+        <div class="row">
+            <div class="col-12 col-lg-4 pt-2 pt-lg-5 px-5 px-lg-0">
+                <h1 class="hero-title my-3">{{ title }}</h1>
+                <p class="hero-description my-3">
+                    Get up-to-date weather information for your location or anywhere in the world with our user-friendly
+                    weather app. Whether you're planning your daily commute or preparing for your next outdoor
+                    adventure, we've got you covered with accurate and reliable
+                    weather forecasts.
+                </p>
+                <form class="d-flex my-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" aria-label="Enter location..."
+                            placeholder="Enter Location..." #locationInput [disabled]="loadingLocation" />
+                        <button type="button" class="btn btn-outline-secondary p-0" (click)="searchLocation(content)"
+                            [disabled]="loadingLocation">
+                            <span class="material-icons-round fs-4 p-2" *ngIf="!loadingLocation">search</span>
+                            <span class="spinner-border spinner-border-sm m-3" role="status" aria-hidden="true"
+                                *ngIf="loadingLocation"></span>
+                            <span class="visually-hidden" *ngIf="loadingLocation">Loading...</span>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary p-0" (click)="autoLocate()"
+                            [disabled]="loadingLocation">
+                            <span class="fs-4 material-icons p-2" *ngIf="!loadingLocation">location_on</span>
+                            <span class="spinner-border spinner-border-sm m-3" role="status" aria-hidden="true"
+                                *ngIf="loadingLocation">
+                            </span>
+                            <span class="visually-hidden" *ngIf="loadingLocation">Loading...</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-8 mb-3 mb-lg-0 mt-3 mt-lg-3 blob-col">
+                <app-blob-svg class="blob"></app-blob-svg>
+                <app-weather-card [darkModeBoolean]="darkMode"></app-weather-card>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Search Results</h4>
+        <button type="button" class="close" aria-label="Close" (click)="closedModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" *ngFor="let city of results"
+                (click)="locationClicked($event)" id="{{city.id}}">
+                {{city.city+', '+city.country}}
+            </a>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closedModal()" [disabled]="loadingLocation">
+            Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="searchLocation(content)" *ngIf="hasNext"
+            [disabled]="loadingLocation">
+            <span *ngIf="!loadingLocation">More Results </span>
+            <span class="spinner-border spinner-border-sm m-3" role="status" aria-hidden="true" *ngIf="loadingLocation">
+            </span>
+            <span class="visually-hidden" *ngIf="loadingLocation">Loading...</span>
+        </button>
+    </div>
+</ng-template>

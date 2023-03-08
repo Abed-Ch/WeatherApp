@@ -1,0 +1,20 @@
+.navbar-logo {
+    max-width: 3rem;
+}
+
+.darkmode-icon {
+    max-width: 2.5rem;
+}
+
+.navbar-brand {
+    color: var(--title-color);
+    cursor: not-allowed;
+}
+
+.navbar-brand:hover {
+    color: var(--title-color);
+}
+
+.nav-item {
+    cursor: pointer;
+}

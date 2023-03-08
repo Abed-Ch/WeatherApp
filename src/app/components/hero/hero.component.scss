@@ -1,0 +1,26 @@
+.hero-title {
+    color: var(--title-color);
+}
+
+.hero-description {
+    color: var(--text-color);
+}
+
+.blob-col {
+    position: relative;
+    z-index: 1;
+}
+
+.blob {
+    position: absolute;
+    width: min(100%, 800px);
+    z-index: -1;
+}
+
+app-weather-card {
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    top: 10%;
+    
+}

@@ -1,0 +1,220 @@
+.animated-weather-card {
+    width: 100%;
+    padding-top: 75%;
+    object-fit: cover;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.cloudyClouds,
+.sunnyClouds {
+    position: absolute;
+    bottom: calc(80% - var(--i)* 12%);
+    width: clamp(60%, 5vw + 2rem, 200px);
+    animation: animatedCloud;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 0;
+}
+
+.sunnyClouds {
+    bottom: calc(80% - var(--i)* 38%);
+    z-index: 9;
+    .cloudyCloudsPath {
+        opacity: 0.75;
+        fill: #fff;
+    }
+}
+
+.cloudyCloudsPath {
+    opacity: calc(1 - (var(--i) * 0.05));
+    fill: var(--fill);
+}
+
+.InvertedCloud {
+    transform: rotateX(180deg);
+}
+
+@keyframes animatedCloud {
+    0% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+    1% {
+        transform: translateX(-99%);
+        opacity: 1;
+    }
+    99% {
+        transform: translateX(179%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(180%);
+        opacity: 0;
+    }
+}
+
+.sun {
+    position: absolute;
+    width: clamp(100px, 100px + 5vw, 200px);
+    height: clamp(100px, 100px + 5vw, 200px);
+    background: linear-gradient( #ffd700 0%, #ffa500 50%, #ff4500 100%);
+    fill: transparent;
+    border-radius: 50%;
+}
+
+.moon {
+    width: clamp(100px, 100px + 5vw, 200px);
+    height: clamp(100px, 100px + 5vw, 200px);
+    fill: transparent;
+    border-radius: 50%;
+    background: radial-gradient(circle at 60% 60%, transparent 35%, #d7d7ff 95%);
+    box-shadow: inset -2vmin 3vmin 3vmin rgb(186 181 255 / 61%), 1vmin 0 1vmin rgb(231 231 237 / 19%), -1vmin 0 1vmin rgb(144 144 225 / 19%);
+    position: absolute;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -43%;
+        right: -44%;
+        width: 46vmin;
+        height: 46vmin;
+        background: radial-gradient( circle at 56% 29%, transparent 55%, #d7d7ff 87%);
+        border-radius: 50%;
+        filter: blur(6.6vmin);
+        transform: rotate(27deg);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 8%;
+        right: -20%;
+        width: 21.5vmin;
+        height: 10vmin;
+        background: linear-gradient(0deg, #e6e6ff 17%, transparent 55%);
+        filter: blur(2vmin);
+        border-radius: 0% 0% 10vmin 10vmin;
+        transform: rotate(225deg);
+        mix-blend-mode: color-dodge;
+    }
+}
+
+@keyframes celestialEntry {
+    0% {
+        left: -140%;
+        top: 30%;
+    }
+    100% {
+        left: 80%;
+        top: -10%;
+    }
+}
+
+.celestialEnter {
+    animation: celestialEntry 4s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.celestialExit {
+    animation: celestialExit 2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes celestialExit {
+    from {
+        transform: translate(270%, -270%);
+    }
+    to {
+        transform: translate(400%, -200%);
+        display: none;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+}
+
+.rainyClouds {
+    position: absolute;
+    top: 0;
+    animation: rainyClouds 30s linear infinite;
+    opacity: 0;
+    z-index: 1;
+    .cloudyCloudsPath {
+        opacity: 1;
+        fill: var(--gray);
+        transform: rotateX(180deg) translateY(-100%);
+    }
+}
+
+@keyframes rainyClouds {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    99% {
+        transform: translateX(149%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+}
+
+.Rain {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    gap: 6.5px;
+    padding: clamp(0.5rem, 1rem + 1vw, 2rem);
+    .Raindrops {
+        background-color: blue;
+        width: 2px;
+        height: 6px;
+        animation: rainFall 5s linear infinite;
+    }
+}
+
+.Snow {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    gap: 6.5px;
+    padding: clamp(0.5rem, 1rem + 1vw, 2rem);
+    .snowFlakes {
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        width: clamp(5px, 2vw, 15px);
+        height: clamp(5px, 2vw, 15px);
+        animation: rainFall 5s linear infinite;
+    }
+}
+
+@keyframes rainFall {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    20% {
+        transform: translateY(100px) scale(1);
+    }
+    40% {
+        transform: translateY(200px) scale(1);
+    }
+    60% {
+        transform: translateY(300px) scale(1);
+    }
+    80% {
+        transform: translateY(400px) scale(1);
+    }
+    100% {
+        transform: translateY(500px) scale(0);
+    }
+}

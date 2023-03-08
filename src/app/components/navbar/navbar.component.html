@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../../assets/weather-app.png" alt="Weather Logo" class="navbar-logo" />
+            <span> Weather App</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mb-2 mb-sm-0  ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <span (click)="toggleDark()" *ngIf="!darkModeTimeOut">
+                            <img src="../../../assets/darkMode.png" class="darkmode-icon" alt="DarkMode" *ngIf="!darkMode">
+                            <img src="../../../assets/lightMode.png" class="darkmode-icon" alt="DarkMode" *ngIf="darkMode">
+                            <span class="ms-4 d-sm-none" [ngClass]="darkMode ? 'text-white' : 'text-black'">Switch To {{darkMode ? "Light" : "Dark"}} Mode</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
