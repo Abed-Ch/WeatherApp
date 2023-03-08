@@ -1,0 +1,17 @@
+.showers{
+    .showers-Rays{
+        animation: sunRay 4s linear ;
+        animation-iteration-count: infinite;
+    }
+    .showers-Drops{
+
+    }
+}
+@keyframes sunRay{
+    from{
+        transform: rotateX(0);
+    }
+    to{
+        transform: rotateX(360deg);
+    }
+}

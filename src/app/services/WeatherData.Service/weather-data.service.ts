@@ -9,7 +9,7 @@ export class WeatherDataService {
   private city: string;
   constructor() {}
 
-  async getWeatherData(
+  async fetchWeatherData(
     latitude: number,
     longitude: number
   ): Promise<WeatherData> {
@@ -19,5 +19,8 @@ export class WeatherDataService {
     var result: WeatherData = await fetchData.json();
     this.response = result;
     return result;
+  }
+  getWeather() {
+    return this.response;
   }
 }

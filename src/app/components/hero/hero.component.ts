@@ -87,7 +87,13 @@ export class HeroComponent implements OnInit, OnDestroy {
     this.LocatioService.autoLocate();
   }
   locationClicked(e: MouseEvent) {
-    let id: number = parseInt((<HTMLAnchorElement>e.target).id);
-    console.log(this.results?.filter((city) => city.id === id));
+    if (this.results) {
+      let id: number = parseInt((<HTMLAnchorElement>e.target).id);
+      let city: LocationInterface[] = this.results.filter(
+        (city) => city.id === id
+      );
+      console.log(city[0]);
+      this.LocatioService.setChosenLocation(city[0]);
+    }
   }
 }

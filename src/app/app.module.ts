@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WeatherDataService } from './services/WeatherData.Service/weather-data.service';
 import { LocationsService } from './services/Locations.Service/locations.service';
+import { DashboardGuard } from './guards/dashboard.guard';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LocationsService } from './services/Locations.Service/locations.service
     ThemesService,
     WeatherDataService,
     LocationsService,
+    DashboardGuard,
   ],
   bootstrap: [AppComponent],
 })

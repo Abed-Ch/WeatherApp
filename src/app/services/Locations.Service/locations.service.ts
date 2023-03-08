@@ -4,6 +4,7 @@ import { WeatherDataService } from '../WeatherData.Service/weather-data.service'
 import { LocationInterface } from 'src/app/Interfaces/Location.interface';
 import { CityApiService } from '../CityApi.Service/city-api.service';
 import { Observable, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,8 @@ export class LocationsService {
   private hasNext: boolean;
   constructor(
     private weatherData: WeatherDataService,
-    private cityApi: CityApiService
+    private cityApi: CityApiService,
+    private router: Router
   ) {}
 
   getCityNames(prefix: string): Observable<LocationInterface[] | undefined> {
@@ -43,17 +45,22 @@ export class LocationsService {
       async (val) => {
         this.longitude = val.coords.longitude;
         this.latitude = val.coords.latitude;
-        let weather = await this.weatherData.getWeatherData(
-          this.latitude,
-          this.longitude
-        );
+        this.getWeather();
       },
       (error) => console.error(error)
     );
   }
 
-  setChosenLocation(id: number) {}
-
+  async setChosenLocation(data: LocationInterface) {
+    await (this.chosenLocation = data);
+    this.latitude = data.altitude;
+    this.longitude = data.longitude;
+    this.getWeather();
+  }
+  async getWeather() {
+    await this.weatherData.fetchWeatherData(this.latitude, this.longitude);
+    this.router.navigate(['dashboard']);
+  }
   getChosenLocation() {
     return this.chosenLocation;
   }
