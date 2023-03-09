@@ -1,17 +1,96 @@
-.showers{
-    .showers-Rays{
-        animation: sunRay 4s linear ;
-        animation-iteration-count: infinite;
-    }
-    .showers-Drops{
-
-    }
+@forward "../../../iconAnimations.scss";
+.showers {
+  .showers-Rays {
+    @extend .sunRays;
+  }
+  .showers-Drops {
+    @extend .rainDroplet;
+  }
 }
-@keyframes sunRay{
-    from{
-        transform: rotateX(0);
-    }
-    to{
-        transform: rotateX(360deg);
-    }
+.clear-Moon {
+  .moon-Stars {
+    @extend .moon-Stars;
+  }
+}
+.cloudy {
+  .cloudy-Cloud {
+    @extend .cloudMoving;
+  }
+}
+.partialyCloudy {
+  .partialyCloudy-Rays {
+    @extend .sunRays;
+  }
+  .partialyCloudy-Clouds {
+    @extend .cloudMoving;
+  }
+}
+.slightlyCloudy {
+  .slightlyCloudy-Rays {
+    @extend .sunRays;
+  }
+  .slightlyCloudy-Cloud {
+    @extend .cloudMoving;
+  }
+}
+
+.rain {
+  .rain-Drop {
+    @extend .rainDroplet;
+  }
+}
+.drizzle {
+  .drizzle-Rain {
+    @extend .drizzle-RainDrops;
+  }
+}
+.freezingRain {
+  .freezingRain-Rain {
+    @extend .rainDroplet;
+  }
+  .freezingRain-Ice {
+    @extend .freezingRainIce;
+  }
+}
+.freezingDrizzle {
+  .freezingDrizzle-Rain {
+    @extend .drizzle-RainDrops;
+  }
+  .freezingDrizzle-Ice {
+    @extend .sunRays;
+  }
+}
+.snow {
+  .snow-Ball {
+    @extend .snowballFall;
+  }
+}
+.container {
+  width: 15rem;
+  height: 15rem;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: rgb(126, 126, 126);
+}
+.clear-Sun {
+  .Sun-Rays {
+    @extend .sunRays;
+  }
+}
+.snowShowers {
+  .snowShowers-Rays {
+    @extend .sunRays;
+  }
+  .snowShowers-Drops {
+    @extend .rainDroplet;
+  }
+  .snowShowers-Ball {
+    @extend .snowballFall;
+  }
+}
+.thunderStorm {
+  .thunderStorm-Bolt {
+    @extend .lightningBolt;
+  }
 }

@@ -1,11 +1,3 @@
-html[data-theme='light'] {
-    --bg-body: #F5F5F5;
-}
-
-html[data-theme='dark'] {
-    --bg-body: #777777;
-}
-
 * {
     transition: background-color 500ms;
     transition: background 500ms;
@@ -20,8 +12,8 @@ app-root {
 }
 
 @media (prefers-color-scheme:dark) {
-     :root {
-        --bg-body: #929292;
+    app-root{
+    background-color: var(--primary-bg);
     }
 }
 

@@ -6,8 +6,8 @@ import { Er404Component } from './pages/er404/er404.component';
 import { DashboardGuard } from './guards/dashboard.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent , canActivate: [DashboardGuard]},
+  // { path: '', component: HomeComponent },
+  { path: '', component: DashboardComponent },
   { path: '**', component: Er404Component }
 ];
 
