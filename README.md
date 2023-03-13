@@ -1,6 +1,9 @@
 <img src="https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/weather-app.png" />
 
 # Weather App
+
+[Check It Out](https://weatherapp-81.web.app/)
+
 Table of content:
 
  1. [App Walkthrough](#walkthrough)<br/>
@@ -143,7 +146,7 @@ The Daily Section contains 7 cards representing the weather each day of the week
 ## Technologies Used 
 
 The application was written in [Angular.](https://github.com/angular/angular)<br/>
-With the help of [Bootstrap.](https://github.com/twbs/bootstrap<br/>
+With the help of [Bootstrap.](https://github.com/twbs/bootstrap)<br/>
 Deployed in [Firebase.](https://firebase.google.com/)<br/>
 [Weather Forecast API | Open-Meteo.com](https://open-meteo.com/en/docs)<br/>
 [Locations API.](http://geodb-cities-api.wirefreethought.com/)<br/>
@@ -153,13 +156,13 @@ Deployed in [Firebase.](https://firebase.google.com/)<br/>
 ## Additional Screenshots
 <p id="Clear"/>
 <br/>
-![Clear Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/ClearNight.jpeg)
+<img src="https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/ClearNight.jpeg" />
 <p id="Cloudy"/>
 <br/>
-![Cloudy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/CloudyNight.jpeg)
+<img src="https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/CloudyNight.jpeg" />
 <p id="Rainy"/>
 <br/>
-![Rainy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/RainNight.jpeg)
+<img src="https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/RainNight.jpeg" />
 <p id="Snowy"/>
 <br/>
-![Snowy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/SnowyNight.jpeg)
+<img src="https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/SnowyNight.jpeg" />
