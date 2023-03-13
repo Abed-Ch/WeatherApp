@@ -40,17 +40,20 @@ export class HeroComponent implements OnInit, OnDestroy {
   async searchLocation(content: any) {
     this.loadingLocation = true;
     this.prefix = this.locationInput.nativeElement.value;
+    if (this.prefix === '') {
+      this.locationInput.nativeElement.classList.add('is-invalid');
+      this.loadingLocation = false;
+      return;
+    }
+    this.locationInput.nativeElement.classList.remove('is-valid');
     try {
       const results = await this.LocatioService.getCityNames(
         this.prefix
       ).toPromise();
-      console.log(results);
       if (Array.isArray(this.results) && this.results.length > 0) {
-        console.log('if true');
         let array = this.results.concat(Array.isArray(results) ? results : []);
         this.results = array;
       } else {
-        console.log('if false');
         this.results = Array.isArray(results) ? results : [];
         this.open(content);
       }
@@ -80,6 +83,8 @@ export class HeroComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.darkModeSub.unsubscribe();
     this.titleSub.unsubscribe();
+    this.closedModal();
+    this.loadingLocation = false;
   }
 
   autoLocate() {
@@ -92,8 +97,9 @@ export class HeroComponent implements OnInit, OnDestroy {
       let city: LocationInterface[] = this.results.filter(
         (city) => city.id === id
       );
-      console.log(city[0]);
       this.LocatioService.setChosenLocation(city[0]);
+      this.closedModal();
+      this.loadingLocation = false;
     }
   }
 }

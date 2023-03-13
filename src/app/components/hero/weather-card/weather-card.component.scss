@@ -70,7 +70,7 @@
     height: clamp(100px, 100px + 5vw, 200px);
     fill: transparent;
     border-radius: 50%;
-    background: radial-gradient(circle at 60% 60%, transparent 35%, #d7d7ff 95%);
+    background: radial-gradient(circle at 60% 60%, rgba(154, 154, 163, 0.8705882353) 35%, #d7d7ff 95%);
     box-shadow: inset -2vmin 3vmin 3vmin rgb(186 181 255 / 61%), 1vmin 0 1vmin rgb(231 231 237 / 19%), -1vmin 0 1vmin rgb(144 144 225 / 19%);
     position: absolute;
     &::before {
@@ -123,10 +123,12 @@
 
 @keyframes celestialExit {
     from {
-        transform: translate(270%, -270%);
+        left: 80%;
+        top: -10%;
     }
     to {
-        transform: translate(400%, -200%);
+        left: 120%;
+        top: 50%;
         display: none;
     }
 }

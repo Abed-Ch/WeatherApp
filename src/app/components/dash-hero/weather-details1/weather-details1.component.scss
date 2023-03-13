@@ -1,0 +1,18 @@
+.dailyInfo-card{
+    border-radius: 25px;
+}
+.bi-arrow-right::before{
+    transform: rotate(var(--i));
+}
+.bi-geo-alt-fill{
+    color: red;
+}
+.bi-thermometer{
+    color: blue;
+}
+.bi-thermometer-high{
+    color: rgb(167, 1, 1);
+}
+.bi-wind{
+    color: lightblue;
+}

@@ -1,0 +1,9 @@
+<div class="dailyInfo-card">
+    <div class="display-3 mt-5 mb-4">{{date}}</div>
+    <div class="my-3 fs-3"><i class="bi bi-thermometer-snow me-3"></i>{{weatherData.apparentTempMin}}&deg; C</div>
+    <div class="my-3 fs-3"><i class="bi bi-thermometer-sun me-3"></i>{{weatherData.apparentTempMax}}&deg; C</div>
+    <div class="my-3 fs-3"><i class="bi me-3" [ngClass]="weatherData.precipitation >= 65 ? 'bi-droplet-fill' 
+        : weatherData.precipitation >= 40 ? 'bi-droplet-half' :'bi-droplet' "></i>{{weatherData.precipitation}}%</div>
+    <div class="my-3 fs-3"><i class="bi bi-sunrise me-3"></i>{{weatherData.sunRise.split('T')[1]}}</div>
+    <div class="my-3 fs-3"><i class="bi bi-sunset me-3"></i>{{weatherData.sunSet.split('T')[1]}}</div>
+</div>

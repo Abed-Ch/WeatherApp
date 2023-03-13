@@ -22,5 +22,36 @@ app-weather-card {
     width: 70%;
     left: 15%;
     top: 10%;
-    
+}
+.input{
+    border: 0;
+    border-bottom: 1px solid rgb(148, 148, 148);
+    background-color: transparent;
+    border-radius: 0;
+}
+.input:active,
+.input:focus{
+    outline: 0;
+    box-shadow: none;
+    border-bottom: 2px solid blue;
+}
+.is-invalid{
+    border-bottom: 1px solid red;
+    &::placeholder{
+        color: red;
+    }
+}
+.btn-location{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid red;
+    color: red;
+    border-radius: 0;
+}
+.btn-search{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #2c68e9;
+    color: #2c68e9;
+    border-radius: 0;
 }

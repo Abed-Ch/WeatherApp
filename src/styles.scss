@@ -1,23 +1,36 @@
 * {
-    transition: background-color 500ms;
-    transition: background 500ms;
+  transition: background-color 500ms;
+  transition: background 500ms;
 }
 
 app-root {
-    min-height: 100vh;
-    overflow-x: hidden;
-    background-color: var(--primary-bg);
-    display: block;
-    position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--primary-bg);
+  display: block;
+  position: relative;
 }
 
-@media (prefers-color-scheme:dark) {
-    app-root{
+@media (prefers-color-scheme: dark) {
+  app-root {
     background-color: var(--primary-bg);
-    }
+  }
+  :root {
+    --dash-bg: #000;
+    --card-bg: #4646465e;
+  }
+}
+:root {
+  --dash-bg: #fff;
+  --card-bg: #e9747461;
 }
 
-
+html[data-theme="dark"] {
+  :root {
+    --dash-bg: #000;
+    --card-bg: #4646465e;
+  }
+}
 /* Importing Bootstrap SCSS file. */
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";

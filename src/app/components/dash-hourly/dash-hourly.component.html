@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="h4 mx-3 pt-4">Hourly: </div>
+    <div class="row flex-nowrap align-items-stretch mx-5 py-4" #Scrollable>
+        <div class="weather-mini-card d-flex" *ngFor="let hour of hourlyWeather">
+            <app-dash-cards class="w-100" [weatherObject]="hour"></app-dash-cards>
+        </div>
+    </div>
+    <div class="arrow-left" (click)="scrollLeft()">
+        <i class="bi bi-caret-left-fill"></i>
+    </div>
+    <div class="arrow-right" (click)="scrollRight()">
+        <i class="bi bi-caret-right-fill"></i>
+    </div>
+</div>

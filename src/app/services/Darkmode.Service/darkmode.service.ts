@@ -11,6 +11,8 @@ export class DarkmodeService implements OnDestroy {
     if (storageData === "true") {
       this.isDarkMode = true;
       this.DarkMode$.next(true);
+    } else {
+      this.DarkMode$.next(false)
     }
   }
   getDarkMode(): BehaviorSubject<boolean> {

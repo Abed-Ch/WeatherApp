@@ -23,10 +23,10 @@ export const HeroObj: Hero[] = [
 export const themeColors: themes = {
   Sunny: {
     light: {
-      primaryBackground: '#edf6f9',
-      blobBackground: '#ffddd2',
-      titleColor: '#aa3e98',
-      descriptionColor: '#9368b7',
+      primaryBackground: '#fdf8e1',
+      blobBackground: '#fcefb4',
+      titleColor: '#6798c0',
+      descriptionColor: '#99d6ea',
     },
     dark: {
       primaryBackground: '#212d40',
@@ -51,10 +51,10 @@ export const themeColors: themes = {
   },
   Rainy: {
     light: {
-      primaryBackground: '#CFE7FF',
-      blobBackground: '#C7CEF3',
-      titleColor: '#3F3F3F',
-      descriptionColor: '#ffffff',
+      primaryBackground: '#fffcf9',
+      blobBackground: '#ffb774',
+      titleColor: '#e91e63',
+      descriptionColor: '#ff9a88',
     },
     dark: {
       primaryBackground: '#555555',

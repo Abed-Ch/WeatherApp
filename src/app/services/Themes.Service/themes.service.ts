@@ -1,13 +1,18 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { DarkmodeService } from '../Darkmode.Service/darkmode.service';
-import { colors, Hero, HeroObj, themeColors } from '../../Interfaces/Hero.interface';
+import {
+  colors,
+  Hero,
+  HeroObj,
+  themeColors,
+} from '../../Interfaces/Hero.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemesService implements OnDestroy {
-  private weatherObject: Hero = HeroObj[Math.floor(Math.random() * 4)];
+  private weatherObject: Hero = HeroObj[this.getNumber()];
   private root = document.documentElement;
   private lightColors: colors = themeColors[this.weatherObject.Condition].light;
   private darkColors: colors = themeColors[this.weatherObject.Condition].dark;
@@ -17,14 +22,18 @@ export class ThemesService implements OnDestroy {
   private weatherCondition: 'Sunny' | 'Rainy' | 'Cloudy' | 'Snowy';
   constructor(private darkModeService: DarkmodeService) {
     this.titleSubject.next(this.weatherObject.Title);
-    this.darkModeSub = this.darkModeService.DarkMode$.subscribe(value => {
+    this.darkModeSub = this.darkModeService.DarkMode$.subscribe((value) => {
       this.darkMode = value;
       this.changeDetected();
     });
     this.weatherCondition = this.weatherObject.Condition;
     this.sendTitle();
   }
-
+  getNumber(): number {
+    let number = Math.round(Math.random() * 4);
+    if (number === 4) number = this.getNumber();
+    return number;
+  }
   changeDetected(): void {
     if (this.darkMode) {
       this.changeRoot(this.darkColors);
@@ -35,10 +44,10 @@ export class ThemesService implements OnDestroy {
   }
 
   sendTitle(): void {
-    let interval: number = window.setInterval(() => {
+    let interval: NodeJS.Timeout = setInterval(() => {
       this.titleSubject.next(this.weatherObject.Title);
       if (this.darkMode && this.weatherObject.Condition === 'Sunny') {
-        this.titleSubject.next("Moonstruck: A Night Sky Worth Staying Up For");
+        this.titleSubject.next('Moonstruck: A Night Sky Worth Staying Up For');
       }
     }, 100);
     setTimeout(() => {
@@ -73,4 +82,3 @@ export class ThemesService implements OnDestroy {
     this.titleSubject.complete();
   }
 }
-

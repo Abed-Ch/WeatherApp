@@ -11,7 +11,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class CityApiService {
-  private next: string;
   private offset: number = 0;
   private hasNext: boolean;
 
@@ -21,7 +20,6 @@ export class CityApiService {
     let url: string = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${keyword}&offset=${this.offset}&limit=5&rapidapi-key=${environment.Search_API_Key}`;
     return this.http.get<LocationResponse>(url).pipe(
       map((response: LocationResponse) => {
-        console.log(response, url);
         const totalCount = response.metadata.totalCount;
         const currentOffset = response.metadata.currentOffset;
         const hasNext = response.data.length < totalCount;

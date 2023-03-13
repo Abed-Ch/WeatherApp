@@ -11,16 +11,16 @@
                 </p>
                 <form class="d-flex my-3">
                     <div class="input-group">
-                        <input type="text" class="form-control" aria-label="Enter location..."
+                        <input type="text" class="form-control input" aria-label="Enter location..."
                             placeholder="Enter Location..." #locationInput [disabled]="loadingLocation" />
-                        <button type="button" class="btn btn-outline-secondary p-0" (click)="searchLocation(content)"
+                        <button type="button" class="btn btn-outline-secondary p-0 btn-location" (click)="searchLocation(content)"
                             [disabled]="loadingLocation">
-                            <span class="material-icons-round fs-4 p-2" *ngIf="!loadingLocation">search</span>
+                            <span class="material-icons-round fs-4 p-2 " *ngIf="!loadingLocation">search</span>
                             <span class="spinner-border spinner-border-sm m-3" role="status" aria-hidden="true"
                                 *ngIf="loadingLocation"></span>
                             <span class="visually-hidden" *ngIf="loadingLocation">Loading...</span>
                         </button>
-                        <button type="button" class="btn btn-outline-secondary p-0" (click)="autoLocate()"
+                        <button type="button" class="btn btn-outline-secondary p-0 btn-search" (click)="autoLocate()"
                             [disabled]="loadingLocation">
                             <span class="fs-4 material-icons p-2" *ngIf="!loadingLocation">location_on</span>
                             <span class="spinner-border spinner-border-sm m-3" role="status" aria-hidden="true"

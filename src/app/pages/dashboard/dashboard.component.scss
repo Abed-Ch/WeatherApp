@@ -65,14 +65,6 @@
     @extend .snowballFall;
   }
 }
-.container {
-  width: 15rem;
-  height: 15rem;
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  background-color: rgb(126, 126, 126);
-}
 .clear-Sun {
   .Sun-Rays {
     @extend .sunRays;

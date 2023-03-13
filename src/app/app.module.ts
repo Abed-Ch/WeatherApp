@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { Er404Component } from './pages/er404/er404.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { BlobSVGComponent } from './components/hero/blob-svg/blob-svg.component';
 import { WeatherCardComponent } from './components/hero/weather-card/weather-card.component';
@@ -20,6 +19,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WeatherDataService } from './services/WeatherData.Service/weather-data.service';
 import { LocationsService } from './services/Locations.Service/locations.service';
 import { DashboardGuard } from './guards/dashboard.guard';
+import { WeathericonsService } from './services/WeatherIcons.Service/weathericons.service';
+import { DashCardsComponent } from './components/dash-cards/dash-cards.component';
+import { DashDailyComponent } from './components/dash-daily/dash-daily.component';
+import { DashHourlyComponent } from './components/dash-hourly/dash-hourly.component';
+import { DashHeroComponent } from './components/dash-hero/dash-hero.component';
+import { WeatherDetails1Component } from './components/dash-hero/weather-details1/weather-details1.component';
+import { WeatherDetails2Component } from './components/dash-hero/weather-details2/weather-details2.component';
+import { WeatherCardsComponent } from './components/dash-hero/weather-cards/weather-cards.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,6 @@ import { DashboardGuard } from './guards/dashboard.guard';
     NavbarComponent,
     HomeComponent,
     DashboardComponent,
-    Er404Component,
     HeroComponent,
     BlobSVGComponent,
     WeatherCardComponent,
@@ -35,6 +41,13 @@ import { DashboardGuard } from './guards/dashboard.guard';
     SunnyDirective,
     RainyDirective,
     SnowyDirective,
+    DashCardsComponent,
+    DashDailyComponent,
+    DashHourlyComponent,
+    DashHeroComponent,
+    WeatherDetails1Component,
+    WeatherDetails2Component,
+    WeatherCardsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [
@@ -43,6 +56,7 @@ import { DashboardGuard } from './guards/dashboard.guard';
     WeatherDataService,
     LocationsService,
     DashboardGuard,
+    WeathericonsService,
   ],
   bootstrap: [AppComponent],
 })
