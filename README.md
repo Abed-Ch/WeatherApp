@@ -3,15 +3,15 @@
 # Weather App
 Table of content:
 
- 1. [App Walkthrough](#walkthrough)
- 1.1. [Themes](#themes)
- 1.2. [Location Selection](#locations)
- 1.3. [Dashboard](#dashboard)
+ 1. [App Walkthrough](#walkthrough)<br/>
+ 1.1. [Themes](#themes)<br/>
+ 1.2. [Location Selection](#locations)<br/>
+ 1.3. [Dashboard](#dashboard)<br/>
  3. [Technologies Used](#tech)
  4. [Additional Screenshots](#shots)
  
 <hr/>
-<p id="walkthrought" />
+<p id="walkthrough" />
 
 ## Application Walkthrough
 
@@ -59,7 +59,7 @@ The cloudy weather theme will have a title describing a cloudy and gloomy weathe
 #### Rainy Weather :
 The rainy weather theme will have a title describing a rainy and wet weather, the weather card will have a dark clouds moving at the top of the card, while rain drops fall constantly and heavily. 
 
-<img src="https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/RainyDay.jpeg" />
+<img src="https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/RainDay.jpeg" />
 
 [Dark Mode Image](#Rainy)
 <hr/>
@@ -142,22 +142,24 @@ The Daily Section contains 7 cards representing the weather each day of the week
 
 ## Technologies Used 
 
-The application was written in [Angular.](https://github.com/angular/angular)
-With the help of [Bootstrap.](https://github.com/twbs/bootstrap)
-Deployed in [Firebase.](https://firebase.google.com/)
-[Weather Forecast API | Open-Meteo.com](https://open-meteo.com/en/docs)
-[Locations API.](http://geodb-cities-api.wirefreethought.com/)
+The application was written in [Angular.](https://github.com/angular/angular)<br/>
+With the help of [Bootstrap.](https://github.com/twbs/bootstrap<br/>
+Deployed in [Firebase.](https://firebase.google.com/)<br/>
+[Weather Forecast API | Open-Meteo.com](https://open-meteo.com/en/docs)<br/>
+[Locations API.](http://geodb-cities-api.wirefreethought.com/)<br/>
 
 <p id="shots" />
 
 ## Additional Screenshots
-
-![Clear Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/ClearNight.jpeg)<p id="Clear"/>
-
-![Cloudy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/CloudyNight.jpeg)
+<p id="Clear"/>
+<br/>
+![Clear Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/ClearNight.jpeg)
 <p id="Cloudy"/>
-
-![Rainy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/RainNight.jpeg)
+<br/>
+![Cloudy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/CloudyNight.jpeg)
 <p id="Rainy"/>
-
-![Snowy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/SnowyNight.jpeg)<p id="Snowy"/>
+<br/>
+![Rainy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/RainNight.jpeg)
+<p id="Snowy"/>
+<br/>
+![Snowy Weather in Dark Mode](https://github.com/Abed-Ch/WeatherApp/blob/master/Screenshots/SnowyNight.jpeg)
